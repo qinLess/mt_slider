@@ -6,7 +6,7 @@ const path = require('path')
 const router = require('koa-router')();
 
 const token = require('./token')
-const slider = require('./ht_slider')
+const slider = require('./slider')
 
 // 美团商家后台登陆token加密逻辑
 router.post('/token', async (ctx, next) => {

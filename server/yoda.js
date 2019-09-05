@@ -46,18 +46,27 @@ var window = {
 		return Buffer.from(str, 'base64').toString('binary');
 	},
 	point: function() {
+		// 宽度
 		var witdh = 800
+		// 高度
 		var height = 600
+		// 滑块
 		var a = 33
+		// 滑框
 		var b = 230
+		// 边距
 		var c = (witdh - b) / 2
+		// 最大值
 		var d = b + c
+		// 最小值1
 		var e = b - a + c
+		// y 轴 最大值
 		var f = 307 + a
 		var trace = [];
 		var F = 0
 
 		while (true) {
+			// y 轴 上下浮动
 			var g = Math.ceil(Math.random() * a);
 			if (F > d) {
 				break
@@ -71,7 +80,7 @@ var window = {
 
 			var S = f + g;
 			var T = Math.floor(Math.random() * (20000 - 15000) + 1) + 15000;
-			trace.push([0, parseInt(F), parseInt(S) / 2, T]);
+			trace.push([0, parseInt(F), parseInt(parseInt(S) / 2), T]);
 		}
 
 		return trace
@@ -79,7 +88,7 @@ var window = {
 	mT: function() {
 		var mt = [];
 		var k = Math.floor(Math.random() * 60);
-		for (var i = 1; i <= k; i++) {
+		for (var i = 1; i <= 60; i++) {
 			window.sleep(0.5)
 			var page_x = Math.floor(Math.random() * ((1283 - 482) + 1)) + 482;
 			var page_y = Math.floor(Math.random() * ((295 - 245) + 1)) + 245;
@@ -115,8 +124,9 @@ var window = {
 	},
 	dT: function () {
 		var a_T = [];
-		var list = ['DIV'];
-		for (var t = 1; t < 5; t++) {
+    var list = ['DIV'];
+    var k = Math.floor(Math.random() * 3) + 1;
+		for (var t = 1; t < k; t++) {
 			var page_x = Math.floor(Math.random() * ((1283) - (482 + 1))) + 482;
 			var page_y = Math.floor(Math.random() * ((295) - (245 + 1))) + 245;
 			var i = Date.now() - window.ts;
@@ -133,11 +143,12 @@ var navigator = {
 
 var document = {
 	documentElement: {
-		clientWidth: 800,
-		clientHeight: 600
+		clientWidth: 1920,
+		clientHeight: 1080
   },
 	referrer: "https://epassport.meituan.com/account/unitivelogin?bg_source=3&service=waimai&platform=2&continue=http://e.waimai.meituan.com/v2/epassport/entry&left_bottom_link=%2Faccount%2Funitivesignup%3Fbg_source%3D3%26service%3Dwaimai%26platform%3D2%26continue%3Dhttp%3A%2F%2Fe.waimai.meituan.com%2Fv2%2Fepassport%2FsignUp%26extChannel%3Dwaimaie%26ext_sign_up_channel%3Dwaimaie&right_bottom_link=%2Faccount%2Funitiverecover%3Fbg_source%3D3%26service%3Dwaimai%26platform%3D2%26continue%3Dhttp%3A%2F%2Fe.waimai.meituan.com%2Fv2%2Fepassport%2FchangePwd"
 };
+
 document.createElement = function () {}
 
 var screen = {
@@ -153,6 +164,7 @@ window.navigator = navigator;
 window.document = document;
 window.screen = screen;
 window.babelHelpers = babelHelpers;
+
 
 ;(function() {
   var g;
@@ -6255,7 +6267,8 @@ window.babelHelpers = babelHelpers;
       value: !0
   });
   var n = function() {
-      var t = []
+    return 'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAB4AAAAeCAYAAAA7MK6iAAADBUlEQVRIS62XMWhUQRCGv0WIgiS5YAoTLVJILFQiKGI6sRARIYeChYUaRFQCkqCFpaVYGBQrFe+ChUEMCFrZGBExCBYxWBgsLCSxMUYOESNm5X+3q3vv8nJ7lwws997b2flnZv+dnTNYa5EUizA+BMX55DVa5nMwOAwjp6KXSNEkwALt74dhYLDG+rMZ8+PAdDy2oVCwCajkObCvQWAtewZ8igM35Fot89/L2t+A3AqAF4AxoJS20QJcBB4C75NJA5T3WPL/KRs9K9V+hdKttFdILWClWYsU9U6Xdv32BVZqAUv1QTrqWsBZcQq84JyJAX4NTIXGGgX2Nq4AMynv/PZo07zMtsGTq8GHInBwmT2OIWQvsN2xw/PCM8WDf90EY3r5DKwFzgA7gJuOXC0pcsUAS+cosCEgpAdU9P75dmhsMzAE3MtgdSxwO3BkiZMQRl4BvNI9Dh07AHSljqAHnmuCMR1qL2ng/Q2mWvZ2ueHTG6Z5Zj08/REAbwMuuD3+mOx5ZQGJTbX0OoHDGRFP9MHUW0cuH+3GgFzHVwAssp50wOFRSgpIH5QOuTC+AHccs13J7G6U1TLZBCx1Ey5ZMoNUdpcrooFWC+6SaCTV4ZrMS8IpeV6UT13BgrsW6wEOjPxblnUtKju6B3QKnBhQB6KSVie4P07e0gvgQ8pzAapgaeg5EAesL4/dpkWkXUZ2B9VLF4IaAFUzkU6/HZURppMZAGtKq3UTjMQlXURRypvj1DMiDj/LAWVAQ83fpJvsgS05GMhDPg9dwabViZ2KuMbqmGYw0gGzt8P+nJhl3bL6PWp/XSMQabiG2ku1t+3No0yWRulMsip2tqZan/zqoDkrKta95WJnrXh6Azi3qhDVxu4CAxizUFllrRXwLWDNKjvwJwnKGAEnki7vin4rcAk4UX3s63bnN3AfuIYxFeWlGtjbtlb9ymXgNNQgX7U/uozVg1zHGDVenH9H28Ivuuwii6VOprOBQ2PWqsU7BuwB2tzw/zlESY054BXwCGPepH1JA/8FO8nYBfHokqkAAAAASUVORK5CYII='
+      // var t = []
       //   , e = document.createElement("canvas");
       // e.width = 30,
       // e.height = 30,
@@ -6912,3 +6925,5 @@ window.babelHelpers = babelHelpers;
 ]);
 
 exports.window = window;
+
+// console.log(babelHelpers)

@@ -81,7 +81,7 @@ def login(res_code, req_code):
 
 def main():
     # 这个需要从官网获取
-    requests_code = '41ef816c1387423c91c4565b5633c320'
+    requests_code = '6406c39006804b3d88af87c94cfaac9f'
     page_data = get_page_data(requests_code)
     res_code = get_code(requests_code, page_data)['data']
     # if res_code.get('response_code', None):

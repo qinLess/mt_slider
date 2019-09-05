@@ -6004,9 +6004,7 @@ function get_behavior_token(config)
 
 	return {
 		'token': window.token,
-		'token_btoa': window.btoa(ps.body._token),
-		'behavior': window.behavior,
-		'behavior_btoa': window.btoa(window.behavior)
+		'behavior': window.behavior
 	}
 };
 
