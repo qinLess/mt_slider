@@ -97,6 +97,19 @@ var window = {
 		}
 		mt.length > 60 && (mt = mt.slice(0, 60))
 		return mt
+  },
+  dT: function () {
+		var a_T = [];
+    var list = ['DIV'];
+    var k = Math.floor(Math.random() * 3) + 1;
+		for (var t = 1; t < k; t++) {
+			var page_x = Math.floor(Math.random() * ((1283) - (482 + 1))) + 482;
+			var page_y = Math.floor(Math.random() * ((295) - (245 + 1))) + 245;
+			var i = Date.now() - window.ts;
+			var s = list[Math.floor(Math.random() * list.length)];
+			a_T.push(`${page_x}, ${page_y}, ${s}, ${i}`)
+		}
+		return a_T
 	},
 	kT: function () {
 		var k_T = []
@@ -114,19 +127,6 @@ var window = {
 		var a_T = [];
 		var list = ['BUTTON','INPUT','DIV', 'A', 'HTML'];
 		for (var t = 1; t < 10; t++) {
-			var page_x = Math.floor(Math.random() * ((1283) - (482 + 1))) + 482;
-			var page_y = Math.floor(Math.random() * ((295) - (245 + 1))) + 245;
-			var i = Date.now() - window.ts;
-			var s = list[Math.floor(Math.random() * list.length)];
-			a_T.push(`${page_x}, ${page_y}, ${s}, ${i}`)
-		}
-		return a_T
-	},
-	dT: function () {
-		var a_T = [];
-    var list = ['DIV'];
-    var k = Math.floor(Math.random() * 3) + 1;
-		for (var t = 1; t < k; t++) {
 			var page_x = Math.floor(Math.random() * ((1283) - (482 + 1))) + 482;
 			var page_y = Math.floor(Math.random() * ((295) - (245 + 1))) + 245;
 			var i = Date.now() - window.ts;
