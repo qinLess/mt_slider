@@ -14,7 +14,7 @@ def get_page_data(requests_code):
     }
     url = 'https://verify.meituan.com/v2/ext_api/page_data'
     res = requests.post(url, headers=headers, data=data).json()
-    print('page_data: ', res['data'])
+    # print('page_data: ', res['data'])
     return res
 
 
@@ -23,7 +23,7 @@ def get_code(request_code, page_data):
         'Accept': 'application/json',
         'Content-Type': 'application/json'
     }).json()
-    print('tb_data: ', tb_data)
+    # print('tb_data: ', tb_data)
     headers = {
         # 'Authorization': 'Bearer ' + request_code,
         'Content-Type': 'application/x-www-form-urlencoded',
@@ -45,9 +45,9 @@ def get_code(request_code, page_data):
 
 
 def main():
-  requests_code = 'aa3cf08a9dc245d9b0ca4f12c4a76ae5'
-  page_data = get_page_data(requests_code)
-  res_code = get_code(requests_code, page_data)['data']
+  request_code = '41da9f392dc742c2aae461e6ffda957d'
+  page_data = get_page_data(request_code)
+  res_code = get_code(request_code, page_data)['data']
 
 
 if __name__ == "__main__":
