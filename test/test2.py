@@ -45,7 +45,7 @@ def get_code(request_code, page_data):
 
 
 def main():
-  request_code = '41da9f392dc742c2aae461e6ffda957d'
+  request_code = 'fd2840d3386c445d8bfbf855cc7136a0'
   page_data = get_page_data(request_code)
   res_code = get_code(request_code, page_data)['data']
 
