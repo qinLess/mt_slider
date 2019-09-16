@@ -1,5 +1,5 @@
 # mt_slider
-### 适用说明
+### 使用说明
 1、git clone https://github.com/Qin2000925/mt_slider.git  
 2、cd mt_slider  
 3、npm install  
