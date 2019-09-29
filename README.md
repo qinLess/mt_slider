@@ -11,4 +11,4 @@
 本代码仅限于账号密码方式登陆  
 
 [美团滑块js逆向文章1](https://www.jianshu.com/p/49d05d2ea2e2)  
-[美团滑块js逆向文章2](https://blog.csdn.net/qq_40000081/article/details/100436142)
+[美团滑块js逆向文章2](https://www.jianshu.com/p/bc7c4c7e614d)
